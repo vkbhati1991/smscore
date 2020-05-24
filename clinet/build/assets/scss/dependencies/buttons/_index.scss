@@ -1,0 +1,171 @@
+// Button sizes
+@mixin button-size($btn-height, $padding-x, $font-size, $line-height, $border-radius) {
+    padding: 0 $padding-x;
+    font-size: $font-size;
+    line-height: $line-height;
+    height: $btn-height;
+    @if($enable-rounded) {
+        border-radius: $border-radius
+    }
+
+    @else {
+        border-radius: 0;
+    }
+}
+
+@mixin button-variant($background, $border, $hover-background: darken($background, 8%), $hover-border: darken($border, 12%), $active-background: darken($background, 10%), $active-border: darken($background, 13%)) {
+    background-color: $background;
+    color: color-yiq($background);
+    border-color: $border;
+    @include x-box-shadow($btn-box-shadow);
+
+    &:hover {
+        background-color: $hover-background;
+        border-color: $hover-border;
+        color: color-yiq($hover-background);
+    }
+
+    &:focus,
+    &.focus {
+        @if $enable-shadows {
+            box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba($border, .5);
+        }
+
+        @else {
+            box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
+        }
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        background-color: $active-background;
+        border-color: $active-border;
+        color: color-yiq($active-background);
+
+        &:focus {
+            @if $enable-shadows {
+                box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($border, .5);
+            }
+
+            @else {
+                box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
+            }
+        }
+    }
+
+}
+
+
+@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
+    color: $color;
+    background-color: transparent;
+    background-image: none;
+    border-color: $color;
+
+    &:hover {
+        color: $color-hover;
+        background-color: $active-background;
+        border-color: $active-border;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+    }
+
+    &.disabled,
+    &:disabled {
+        color: $color;
+        background-color: transparent;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show>&.dropdown-toggle {
+        color: color-yiq($active-background);
+        background-color: $active-background;
+        border-color: $active-border;
+
+        &:focus {
+            @if $enable-shadows and $btn-active-box-shadow !=none {
+                box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5);
+            }
+
+            @else {
+                box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+            }
+        }
+    }
+}
+
+@mixin button-circle-size( $spacing,$icon-font-size, $font-size) {
+    .button-circle__icon {
+        display: inline-block;
+        font-size:$icon-font-size;
+        height: $spacing;
+        width: $spacing;
+        min-width: $spacing;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    .button-circle__text {
+        margin-top: $btn-block-spacing-y;
+        display: block;
+        text-align: center;
+        font-size: $font-size;
+        cursor: pointer;
+    }
+}
+
+@mixin button-circle-variant($color, $hover-color:color-yiq($color), $active-background: $color, $active-border: $color) {
+    .button-circle__icon {
+        color: $color;
+        border: 1px solid $color;
+        @include transition($btn-transition);
+    }
+
+    .button-circle__text {
+        color: $color;
+
+    }
+
+    &:hover {
+        .button-circle__icon {
+            color: $hover-color;
+            border: 1px solid $color;
+            background-color: $color;
+        }
+    }
+
+    &.disabled,
+    &:disabled {
+        .button-circle__icon {
+            color: $color;
+            background-color: transparent;
+        }
+
+        .button-circle__text {
+            color: $color;
+
+        }
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        .button-circle__icon {
+            color: $hover-color;
+            background-color: $active-background;
+        }
+
+        .button-circle__text {
+            color: $color;
+
+        }
+    }
+
+}

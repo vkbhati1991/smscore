@@ -1,0 +1,18 @@
+@mixin transition($transition...) {
+    @if $enable-transitions {
+        @if length($transition)==0 {
+            transition: $transition-base;
+            -ms-transition: $transition-base;
+            -o-transition: $transition-base;
+            -moz-transition: $transition-base;
+            -webkit-transition: $transition-base;
+        }
+        @else {
+            transition: $transition;
+            -ms-transition: $transition;
+            -o-transition: $transition;
+            -moz-transition: $transition;
+            -webkit-transition: $transition;
+        }
+    }
+}

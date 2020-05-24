@@ -1,0 +1,14 @@
+
+.v-base          { vertical-align: $v-base; }
+.v-mid           { vertical-align: $v-mid; }
+.v-top           { vertical-align: $v-top; }
+.v-bottom        { vertical-align: $v-bottom; }
+.v-text-top      { vertical-align: $v-text-top; }
+.v-text-bottom   { vertical-align: $v-text-bottom; }
+
+.mid, .absolute-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

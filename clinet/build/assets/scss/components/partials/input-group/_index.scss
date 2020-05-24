@@ -1,0 +1,100 @@
+//input-placeholder 
+%input-group {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+    .form-control {
+        &+.form-control {
+            margin-left: -$input-border-width;
+
+            &+.form-control {
+                margin-left: -$input-border-width;
+            }
+        }
+    }
+}
+
+// Readonly controls as plain text
+//
+// Apply class to a readonly input to make it appear like regular plain
+// text (without any border, background color, focus indicator)
+.form-control--plain-text {
+    display: block;
+    width: 100%;
+    color: $input-color;
+    border: 0;
+    outline: 0; //Disabled
+
+    &:disabled,
+    &[readonly] {
+        opacity: 1;
+        background-color: transparent;
+    }
+}
+
+//Picker Input Default
+.input-group {
+    @extend %input-group;
+
+    >.form-control {
+        font-size: $font-size-15;
+        height: $input-height-default;
+    }
+
+    >.form-control--plain-text {
+        font-size: $font-size-15;
+    }
+
+    >.input-group__append {
+        @include input-group-addon-size($input-height-default, $font-size-16);
+        @include input-group-append($input-height-default, $font-size-16);
+    }
+
+    >.input-group__prepend {
+        @include input-group-addon-size($input-height-default, $font-size-16);
+        @include input-group-prepend($input-height-default, $font-size-16);
+    }
+}
+
+.input-group--sm {
+    >.form-control {
+        font-size: $font-size-12;
+        height: $input-height-small;
+    }
+
+    >.form-control--plain-text {
+        font-size: $font-size-12;
+    }
+
+    >.input-group__append {
+        @include input-group-addon-size($input-height-small, $font-size-12);
+    }
+
+    >.input-group__prepend {
+        @include input-group-addon-size($input-height-small, $font-size-12);
+    }
+}
+
+.input-group--lg {
+    >.form-control {
+        font-size: $font-size-20;
+        height: $input-height-large;
+    }
+
+    >.form-control--plain-text {
+        font-size: $font-size-20;
+    }
+
+    >.input-group__append {
+        @include input-group-addon-size($input-height-large, $font-size-20);
+    }
+
+    >.input-group__prepend {
+        @include input-group-addon-size($input-height-large, $font-size-20);
+    }
+}
+
+.input-group.has-error .form-control {
+    border-color: #dc3545;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "CRMNext",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "node-sass": "^4.0.0"
+  },
+  "scripts": {
+    "debug-css": "node-sass SCSS -o css --source-comments",
+    "watch-css": "node-sass SCSS -w -o ../app/static/css --source-comments",
+    "release-css": "node-sass SCSS -o app/assets/css/ --output-style compressed"
+  },
+  "dependencies": {
+    "node-sass": "^4.0.0"
+  }
+}

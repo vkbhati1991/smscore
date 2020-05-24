@@ -1,0 +1,12 @@
+
+
+
+@mixin setBgImage($secectorName,$listImg,$length){
+	@for $i from 1 through $length{
+		#{$secectorName}:nth-child(#{$i}){
+			.linkdinListImg{
+				background-image:url("../../img/linkedinUsers/c#{$i}.jpg") !important;
+			}
+		}
+	}
+}

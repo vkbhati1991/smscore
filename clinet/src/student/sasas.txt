@@ -1,0 +1,172 @@
+import React, { Component } from "react";
+import ModalUtil from "../vendor/vs-react-modal-new/Util";
+import axios from "axios";
+import Textbox from "./Textbox";
+
+const Fields = {
+    CASE_SUBJECT: {
+        ControlType: 1,
+        CanMask: true,
+        KeypadType: "text",
+        IsReadOnly: false,
+        Validations: {
+            required: {
+                mag: "invalid data"
+            }
+        },
+        IsMandatory: true,
+        ControlKey: "CASE_SUBJECT",
+        IsHidden: false,
+        Caption: "Subject",
+        CaptionPosition: 0,
+        StartIndex: 0,
+        MaskLength: 0
+    }
+}
+
+class StudentForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            salutation: props.salutation || "",
+            firstname: props.firstname || "",
+            middlename: props.middlename || "",
+            lastname: props.lastname || "",
+            email: props.email || "",
+            password: props.password || "",
+            age: props.age || 0
+        }
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost:5000${this.props.path}`).then((response) => {
+            const data = response.data;
+            this.setState({
+                salutation: data.salutation,
+                firstname: data.firstname,
+                middlename: data.middlename,
+                lastname: data.lastname,
+                email: data.email,
+                password: data.password,
+                age: data.age
+            });
+        });
+    }
+
+    setValue = (name, value) => {
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleWindowReload = () => {
+        window.location.reload();
+    }
+
+
+    handleSubmit = () => {
+
+        axios.post('http://localhost:5000/students', this.state).then((response) => {
+            if (response.status === 200) {
+                ModalUtil.success("Your Data Has Been Saved Successfully", this.handleWindowReload, {
+                    title: "React Modal",
+                    maxWidth: 500,
+                    header: false,
+                    footer: true
+                });
+            }
+        }).catch(error => {
+            ModalUtil.error(error.message, null, {
+                title: "React Modal",
+                maxWidth: 500,
+                header: false,
+                footer: true
+            });
+        });
+    }
+
+    handleUpdate = () => {
+
+        axios.patch(`http://localhost:5000${this.props.path}`, this.state).then((response) => {
+            if (response.status === 200) {
+                ModalUtil.success("Your Data Has Been Saved Successfully", this.handleWindowReload, {
+                    title: "React Modal",
+                    maxWidth: 500,
+                    header: false,
+                    footer: true
+                });
+            }
+        }).catch(error => {
+            ModalUtil.error(error.message, null, {
+                title: "React Modal",
+                maxWidth: 500,
+                header: false,
+                footer: true
+            });
+        });
+    }
+
+
+    getButton = () => {
+        if (this.props.btntype === "update") {
+            return <button onClick={this.handleUpdate} type="submit" className="btn btn-primary">Update</button>
+        }
+
+        return <button onClick={this.handleSubmit} type="submit" className="btn btn-primary">Submit</button>
+    }
+
+    render() {
+        return (
+            <div className="form-container">
+                <div className="form-title">{this.props.title}</div>
+                <div className="form-box">
+                    <div className="form-row">
+                        <div className="form-group col">
+                            <label>salutation</label>
+                            <Textbox
+                                name="salutation"
+                                setValue={this.setValue}
+                                value={this.state.salutation} />
+                            {/* <input required type="text" onChange={this.handleOnChange} name="salutation" value={this.state.salutation} className="form-control" /> */}
+                        </div>
+                        <div className="form-group col">
+                            <label>First Name</label>
+                            <input required type="text" onChange={this.handleOnChange} name="firstname" value={this.state.firstname} className="form-control" />
+                        </div>
+                        <div className="form-group col">
+                            <label>Middle Name</label>
+                            <input type="text" onChange={this.handleOnChange} name="middlename" value={this.state.middlename} className="form-control" />
+                        </div>
+                        <div className="form-group col">
+                            <label>Last Name</label>
+                            <input required type="text" onChange={this.handleOnChange} name="lastname" value={this.state.lastname} className="form-control" />
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col">
+                            <label>Email ID</label>
+                            <input required type="text" onChange={this.handleOnChange} name="email" value={this.state.email} className="form-control" />
+                        </div>
+                        <div className="form-group col">
+                            <label>Password</label>
+                            <input required type="text" onChange={this.handleOnChange} name="password" value={this.state.password} className="form-control" />
+                        </div>
+
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col">
+                            <label>Age</label>
+                            <input required type="text" onChange={this.handleOnChange} name="age" value={this.state.age} className="form-control" />
+                        </div>
+                    </div>
+
+                    {this.getButton()}
+
+
+                </div>
+            </div>
+        )
+    }
+}
+
+export default StudentForm;

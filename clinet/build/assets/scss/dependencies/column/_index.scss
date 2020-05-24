@@ -1,0 +1,15 @@
+
+  @mixin createGrid($selectorName, $gridLength) {
+    #{$selectorName}:first-child:nth-last-child(1) {
+        max-width: 100%;
+    }
+    @for $i from 2 through $gridLength {
+			#{$selectorName}:first-child:nth-last-child(#{$i}),
+			#{$selectorName}:first-child:nth-last-child(#{$i})~#{$selectorName} {
+			
+           	 max-width: (100/#{$i})#{'%'};
+        }
+    }
+}
+
+

@@ -1,0 +1,21 @@
+
+@mixin scroll($className) {
+    
+    #{$className}::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    
+    #{$className}::-webkit-scrollbar {
+        width: 6px;
+        background-color: transparent;
+    }
+    
+    #{$className}::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    
+    #{$className}:hover::-webkit-scrollbar-thumb {
+        background-color: #dddddd;
+    }
+    
+}

@@ -1,0 +1,49 @@
+@each $size in $border-sizes {
+  .br--top#{$size}{  border-top-left-radius: pxToRem($size); border-top-right-radius: pxToRem($size);}
+  .br--right#{$size}{ border-top-right-radius: pxToRem($size); border-bottom-right-radius: pxToRem($size); }
+  .br--bottom#{$size}{ border-bottom-left-radius: pxToRem($size);  border-bottom-right-radius: pxToRem($size);}
+  .br--left#{$size}{ border-top-left-radius: pxToRem($size); border-bottom-left-radius: pxToRem($size);}
+  .br#{$size} {border-radius: pxToRem($size);}
+}
+
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include set-media-width($breakpoint) {
+    $infix: get-key($breakpoint, $grid-breakpoints);
+      .br#{$infix}-pill {border-radius: 100%;}
+      .br#{$infix}-none {border-radius: 0 !important}
+  }
+}
+.br-100  { border-radius: $spacing-full; }
+
+
+
+
+// .br0 { border-radius: $spacing-0; }
+// .br1 { border-radius: $spacing-2; }
+// .br2 { border-radius: $spacing-4; }
+// .br3 { border-radius: $spacing-8; }
+// .br4 { border-radius: $spacing-16; }
+
+// .br-100  { border-radius: $spacing-full; }
+// .br-pill { border-radius: $br-pill; }
+
+// .br--bottom {
+//   border-top-left-radius: 0;
+//   border-top-right-radius: 0;
+// }
+
+// .br--top {
+//   border-bottom-left-radius: 0;
+//   border-bottom-right-radius: 0;
+// }
+
+// .br--right {
+//   border-top-left-radius: 0;
+//   border-bottom-left-radius: 0;
+// }
+
+// .br--left {
+//   border-top-right-radius: 0;
+//   border-bottom-right-radius: 0;
+// }

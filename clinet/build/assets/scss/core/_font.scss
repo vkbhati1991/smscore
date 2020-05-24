@@ -1,0 +1,26 @@
+//*************Global Fonts************** //
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@515&display=swap');
+
+$font-family-light: "MnSansLight",
+Arial,
+sans-serif !default;
+
+$font-family-regular: "MnSansRegular",
+Arial,
+sans-serif !default;
+
+$font-family-medium: "MnSansSemiBold",
+Arial,
+sans-serif !default;
+
+$font-family-bold: "MnSansBold",
+Arial,
+sans-serif !default;
+
+@if ($load-web-fonts) {
+  @include font-face('MnSansLight', 'Muli-Light');
+  @include font-face('MnSansRegular', 'Muli-Regular');
+  @include font-face('MnSansSemiBold', 'Muli-Medium');
+  @include font-face('MnSansBold', 'Muli-Bold');
+}

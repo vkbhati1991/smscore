@@ -1,0 +1,7 @@
+@mixin buttonAnimation($params...) {
+    animation: $params;
+    -ms-animation: $params;
+    -o-animation: $params;
+    -moz-animation: $params;
+    -webkit-animation: $params;
+}

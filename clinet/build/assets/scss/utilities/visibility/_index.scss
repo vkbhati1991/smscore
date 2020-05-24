@@ -1,0 +1,41 @@
+.gray-shade-1{
+  background: $gray-shade-1;
+}
+
+.o-5{
+  opacity: 0.5 !important;
+}
+
+.o-100 { opacity: $o-100;    }
+.o-90  { opacity: $o-90;   }
+.o-80  { opacity: $o-80;   }
+.o-70  { opacity: $o-70;   }
+.o-60  { opacity: $o-60;   }
+.o-50  { opacity: $o-50;   }
+.o-40  { opacity: $o-40;   }
+.o-30  { opacity: $o-30;   }
+.o-20  { opacity: $o-20;   }
+.o-10  { opacity: $o-10;   }
+.o-05  { opacity: $o-05;  }
+.o-025 { opacity: $o-025; }
+.o-0   { opacity: $o-0; }
+.o-5{
+  opacity: 0.5 !important;
+}
+
+.dim {
+  opacity: 1;
+  transition: opacity .15s ease-in;
+}
+.dim:hover,
+.dim:focus {
+  opacity: .5;
+  transition: opacity .15s ease-in;
+}
+.dim:active {
+  opacity: .8; transition: opacity .15s ease-out;
+}
+.shadow-hover:hover::after,
+.shadow-hover:focus::after {
+  opacity: 1;
+}

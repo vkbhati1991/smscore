@@ -1,0 +1,118 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    border: $btn-border-width solid transparent;
+    @include transition($btn-transition);
+    @include button-size($btn-height-default, $btn-padding-x, $font-size-13, $btn-line-height, $btn-border-radius);
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: $btn-focus-box-shadow;
+    }
+
+    &.disabled,
+    &:disabled {
+        opacity: $btn-disabled-opacity;
+        @include x-box-shadow(none);
+    }
+
+    &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        background-image: none;
+        @include x-box-shadow($btn-active-box-shadow);
+
+        &:focus {
+            @include x-box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+        }
+    }
+
+}
+
+@each $color,
+$value in $theme-colors {
+    .button--#{$color} {
+        @include button-variant($value, $value);
+    }
+}
+
+@each $color,
+$value in $theme-colors {
+    .button--outline-#{$color} {
+        @include button-outline-variant($value);
+    }
+}
+
+
+.button--large {
+    @include button-size($btn-height-large, $btn-padding-x-large, $font-size-18, $line-height-large, $border-radius-large);
+}
+
+.button--small {
+    @include button-size($btn-height-small, $btn-padding-x-small, $font-size-12, $line-height-small, $border-radius-small);
+}
+
+.button--block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    +.button--block {
+        margin-top: $btn-block-spacing-y;
+    }
+}
+
+.button-circle {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: $btn-font-weight;
+    user-select: none;
+    text-align: center;
+
+    @include button-circle-size($btn-circle-size, $btn-circle-icon-size-medium, $btn-circle-font-size);
+
+}
+
+@each $color,
+$value in $theme-colors {
+    .button-circle--#{$color} {
+        @include button-circle-variant($value)
+    }
+}
+
+.button-group {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+
+    >.button {
+        margin: 0;
+        border-radius: 0;
+
+        +.button {
+            margin-left: -1px;
+        }
+
+        @if($enable-rounded) {
+            &:first-child {
+                @include border-left-radius($btn-border-radius);
+            }
+
+            &:last-child {
+                @include border-right-radius($btn-border-radius);
+            }
+        }
+
+        @else {
+            border-radius: 0;
+        }
+    }
+}

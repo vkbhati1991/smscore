@@ -1,0 +1,13 @@
+
+
+// Mixin for box-sizing
+//  .selector {
+//   @include x-box-sizing(border-box);
+//  }
+//
+@mixin x-box-sizing ($values...) {
+	-webkit-box-sizing: $values;
+	-moz-box-sizing: $values;
+	-ms-box-sizing: $values;
+	box-sizing: $values;
+}

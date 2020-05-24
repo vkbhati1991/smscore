@@ -1,0 +1,214 @@
+.pdf-table-header {
+    height: 68px;
+    color: #000;
+}
+
+.pdf-table-header-item {
+    width: 25%;
+    float: left;
+    padding: 16px 20px;
+}
+.pdf-header-label {
+    font-size: 12px;
+    padding-bottom: 8px;
+}
+
+.pdf-header-value {
+    font-family: MnSansBold;
+    color: #000;
+    font-size: 14px;
+    height:14px;
+}
+.information-container {
+    padding: 0 20px;
+    padding-bottom:20px
+}
+
+.information-title {
+    font-family: MnSansBold;
+    border-top: 1px solid #ddd;
+    padding: 8px 0;
+    color: #000;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+     text-align:left
+}
+
+.pdf-col-title {
+    font-size: 12px;
+    padding-bottom: 8px;
+    text-align:left;
+    width:100%;
+    float:left
+}
+.pdf-col-value {
+    font-size: 16px;
+}
+
+.pdf-col {
+    width: 50%;
+    float: left;
+    padding-top: 16px;
+}
+
+.pdf-row {
+    height: 52px;
+}
+
+.page-break{
+  page-break-after:always
+}
+.pdf-row-100 {
+    padding-top: 20px;
+}
+.pdf-col-100 .pdf-col-title {
+    float: none;
+    width: 100%;
+}
+.pdf-col-100 .pdf-col-value {
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #000;
+    line-height: 0;
+}
+.pdf-col-100 .pdf-col-value img{
+width:100%;
+}
+.id-card-table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.id-card-cell {
+    display: inline-block;
+    width: 33.33%;
+    text-align: center;
+    padding: 16px;
+    vertical-align:top
+}
+.id-card {
+    border: 1px solid #4789c8;
+    border-radius: 10px;
+}
+.id-card-logo {
+    width: 60px;
+    float: left;
+}
+.id-card-header {
+    height: 60px;
+    padding: 10px 20px;
+}
+.id-card-school-name {
+    float: left;
+    font-size: 20px;
+    padding: 10px;
+    font-family: MnSansBold;
+}
+
+.school-address {
+    background: #4789c8;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    line-height: 20px;
+    font-size: 12px;
+     -webkit-print-color-adjust: exact;
+}
+
+.student-photo {
+    line-height: 0;
+    width: 100px;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover !important;
+    background-position: center top !important;
+    border: 2px solid #4789c8;
+    float:left;
+
+}
+img.stu-photo {
+    height: 140px;
+    width: 100px;
+}
+
+.stu-info {
+    padding: 20px;
+    display: flex;
+}
+
+.student-address {
+    background: #4789c8;
+    color: #fff;
+    padding: 10px;
+    line-height: 20px;
+    height: 60px;
+    font-size: 12px;
+}
+
+img.stu-photo.stu-photo2 {
+    opacity: 1;
+}
+.stu-content {
+    float: left;
+}
+.id-card-row {
+    height: auto;
+    display: flex;
+    padding-bottom: 14px;
+}
+.id-card-label {
+      float: left;
+    width: 104px;
+    text-align: left;
+    color: #000;
+    font-size: 14px
+}
+.id-card-value {
+    float: left;
+    font-family: MnSansBold;
+    color: #4789c8;
+    font-size: 14px;
+}
+.stu-content {
+    float: left;
+    padding-left: 20px;
+    padding-top: 4px;
+}
+.id-card-footer {
+    display: flex;
+    padding: 10px;
+        align-items: center;
+}
+
+.principalsign {
+    color: #000;
+    font-size: 8px;
+    font-family: MnSansBold;
+}
+.id-footer-phone {
+    flex: 1;
+    text-align: left;
+}
+
+@media print {
+#cmd{
+    display:none !important
+    }
+
+    .school-address {
+    background: #4789c8 !important;
+    color:#fff !important;
+     -webkit-print-color-adjust: exact;
+    }
+    .id-card-cell {
+       width: 50%;
+        }
+
+        .student-address {
+    background: #4789c8 !important;
+    color:#fff !important;
+}
+
+}

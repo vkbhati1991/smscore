@@ -1,0 +1,79 @@
+
+
+//*
+//*The Method used for create border collection
+//*@example
+// @border all
+// .ba{}
+// .ba-xs{}
+// .ba-sm{}
+//.........
+// .ba-lg{}
+//
+
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include set-media-width($breakpoint) {
+    $infix: get-key($breakpoint, $grid-breakpoints);
+
+      .ba#{$infix}                  {border: 1px solid}
+      .ba2#{$infix}                 {border: 2px solid}
+      .ba3#{$infix}                 {border: 3px solid}
+      .ba4#{$infix}                 {border: 4px solid}
+      .ba5#{$infix}                 {border: 5px solid}
+      .ba6#{$infix}                 {border: 6px solid}
+      .ba7#{$infix}                 {border: 7px solid}
+      .ba8#{$infix}                 {border: 8px solid}
+      .ba9#{$infix}                 {border: 9px solid}
+      .ba10#{$infix}                {border: 10px solid}
+
+      .bl#{$infix}                  { border-left: 1px solid }
+      .bt#{$infix}                  { border-top: 1px solid }
+      .br#{$infix}                  { border-right: 1px solid }
+      .bb#{$infix}                  { border-bottom: 1px solid }
+
+      .bw1#{$infix}                 {border-width: 1px !important;}
+      .bw2#{$infix}                 {border-width: 2px !important;}
+      .bw3#{$infix}                 {border-width: 3px !important;}
+      .bw4#{$infix}                 {border-width: 4px !important;}
+      .bw5#{$infix}                 {border-width: 5px !important;}
+      .bw6#{$infix}                 {border-width: 6px !important;}
+      .bw7#{$infix}                 {border-width: 7px !important;}
+      .bw8#{$infix}                 {border-width: 8px !important;}
+      .bw9#{$infix}                 {border-width: 9px !important;}
+      .bw10#{$infix}                {border-width: 10px !important;}
+
+      .bln#{$infix}                 { border-left: 0 !important }
+      .btn#{$infix}                 { border-top: 0 !important }
+      .brn#{$infix}                 { border-right: 0 !important }
+      .bbn#{$infix}                 { border-bottom: 0 !important }
+      .bn#{$infix}                  {border: 0 !important}
+
+  }
+}
+
+
+.b--solid            { border-style: solid !important}     
+.b--dotted           { border-style: dotted !important }     
+.b--dashed           { border-style: dashed !important }     
+.b--double           { border-style: double !important }
+.b--none             { border-style: none; }    
+
+
+//*
+//*The Method used for create border color
+//*@example
+// .b--white {border-color: #ffffff}
+//
+
+@each $color,  $value in $colorCollection {
+  .b--#{$color} {
+    border-color: $value;
+  }
+}
+
+//---Remove after code(tachyon) refactor---
+.b--default    { border-color:  $b--default; }
+.b--primary    { border-color:  $b--primary; }
+.b--secondary, 
+.b--light-gray { border-color:  $b--secondary; }

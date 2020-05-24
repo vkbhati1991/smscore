@@ -1,0 +1,708 @@
+@import "./sizes";
+
+$white: #ffffff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #eaeaea !default;
+$gray-300: #dadce0 !default;
+$gray-400: #cccccc !default;
+$gray-500: #adb5bd !default;
+$gray-600: #777777 !default;
+$gray-700: #555555 !default;
+$gray-800: #2d2d2d !default;
+$gray-900: #222222 !default;
+$black: #000000 !default;
+$transparent : transparent;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #5f5af0 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$gold: #ffb700 !default;
+
+$near-black: $gray-900 !default;
+$dark-gray: $gray-800 !default;
+$mid-gray: $gray-700 !default;
+$gray: $gray-600 !default;
+$silver: $gray-500 !default;
+$light-silver:$gray-400 !default;
+$moon-gray: $gray-300 !default;
+$light-gray: $gray-200 !default;
+$near-white: $gray-100 !default;
+
+$colors: () !default;
+$colors: map-merge(("blue": $blue,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": $white,
+    "gray": $gray-600,
+    "gray-dark": $gray-800), $colors);
+
+//Color system ============================================================================
+
+$primary: $gray-900 !default;
+$secondary: $gray-700 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(("primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "brand": $brand,
+    "near-black": $gray-900,
+    "dark-gray": $gray-800,
+    "mid-gray": $gray-700,
+    "gray": $gray-600,
+    "silver": $gray-500,
+    "light-silver": $gray-400,
+    "moon-gray": $gray-300,
+    "light-gray": $gray-200,
+    "near-white": $gray-100,
+  ), $theme-colors);
+
+$colorCollection: () !default;
+$colorCollection: map-merge(("brand": $brand,
+    "brand-active": $brand-active,
+    "brand-disabled": $brand-disabled,
+    "link": $brand-text-link,
+    "link-active": $brand-text-link-active,
+    "link-disabled": $brand-text-link-disabled,
+    "blue": $blue,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "gold": $gold,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": $white,
+    "black": $black,
+    "near-black": $gray-900,
+    "dark-gray": $gray-800,
+    "mid-gray": $gray-700,
+    "gray": $gray-600,
+    "silver": $gray-500,
+    "light-silver": $gray-400,
+    "moon-gray": $gray-300,
+    "light-gray": $gray-200,
+    "near-white": $gray-100,
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "warning": $warning,
+    "info": $info,
+    "danger": $danger,
+    "aqua": $brand,
+  ), $colorCollection);
+
+
+
+
+$black-90: rgba(0, 0, 0, .9) !default;
+$black-80: rgba(0, 0, 0, .8) !default;
+$black-70: rgba(0, 0, 0, .7) !default;
+$black-60: rgba(0, 0, 0, .6) !default;
+$black-50: rgba(0, 0, 0, .5) !default;
+$black-40: rgba(0, 0, 0, .4) !default;
+$black-30: rgba(0, 0, 0, .3) !default;
+$black-20: rgba(0, 0, 0, .2) !default;
+$black-10: rgba(0, 0, 0, .1) !default;
+$black-05: rgba(0, 0, 0, .05) !default;
+$black-025: rgba(0, 0, 0, .025) !default;
+$black-0125: rgba(0, 0, 0, .0125) !default;
+
+$white-90: rgba(255, 255, 255, .9) !default;
+$white-80: rgba(255, 255, 255, .8) !default;
+$white-70: rgba(255, 255, 255, .7) !default;
+$white-60: rgba(255, 255, 255, .6) !default;
+$white-50: rgba(255, 255, 255, .5) !default;
+$white-40: rgba(255, 255, 255, .4) !default;
+$white-30: rgba(255, 255, 255, .3) !default;
+$white-20: rgba(255, 255, 255, .2) !default;
+$white-10: rgba(255, 255, 255, .1) !default;
+$white-05: rgba(255, 255, 255, .05) !default;
+$white-025: rgba(255, 255, 255, .025) !default;
+$white-0125: rgba(255, 255, 255, .0125) !default;
+
+
+//**
+//***----Border-color will define after variable refactoring done---------//
+//**
+$b--default : $gray-300;
+$b--primary : $gray-400;
+$b--secondary : $gray-200;
+
+
+//**
+//***----Globals Color---------//
+//**
+$body-bg: $gray-400 !default;
+$body-color: $primary !default;
+
+
+//**
+//***----Globals---------//
+//**
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-transitions: true !default;
+$enable-print-styles: true !default;
+$enable-card-rounded: true !default;
+$enable-login-bg: true !default;
+
+$theme-color-interval: 8% !default;
+$yiq-contrasted-threshold: 150 !default;
+$yiq-text-dark: $gray-900 !default;
+$yiq-text-light: $white !default;
+
+$grid-breakpoints: (xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px) !default;
+
+$container-max-widths: (sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px) !default;
+
+
+//**
+//***Transitions**********
+//**
+$transition-base: all .2s ease-in-out !default;
+$transition-fade: opacity .15s linear !default;
+$transition-collapse: height .35s ease !default;
+
+
+//**
+//***Alignment**********
+//**
+
+$v-base: baseline;
+$v-mid: middle;
+$v-top: top;
+$v-bottom: bottom;
+$v-text-top: text-top;
+$v-text-bottom: text-bottom;
+
+//**
+//***Shadows**********
+//**
+$shadow-1: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+$shadow-2: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+$shadow-3: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+$shadow-4: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+$shadow-5: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+$shadow-6: 0 1px 2px 0 rgba(0, 0, 0, 0.10);
+$shadow-n: none;
+
+
+//**
+//***Spacing**********
+//**
+// $spacing-0: 0 !default;
+// $spacing-2: 0.125rem !default; //2px;
+// $spacing-4: .25rem !default; //4px
+// $spacing-8: .5rem !default;//8px
+// $spacing-12: .75rem !default;//12px
+// $spacing-16: 1rem !default;//16px
+// $spacing-20: 1.25rem !default;//20px
+// $spacing-24: 1.50rem !default;//24px
+
+$spacing-onefourth: 25% !default;
+$spacing-threefourth: 75% !default;
+$spacing-half: 50% !default;
+$spacing-full: 100% !default;
+$spacing-full-vh: 100vh !default;
+$spacing-full-vw: 100vw !default;
+$br-pill: 9999px !default;
+
+$spacing-0: 0 !default;
+$spacing-1: .0625rem !default;
+$spacing-2: .125rem !default;
+$spacing-3: .1875rem !default;
+$spacing-4: .25rem !default;
+$spacing-5: .3125rem !default;
+$spacing-6: .375rem !default;
+$spacing-7: .4375rem !default;
+$spacing-8: .5rem !default;
+$spacing-9: .5625rem !default;
+$spacing-10: .625rem !default;
+$spacing-11: .6875rem !default;
+$spacing-12: .75rem !default;
+$spacing-13: .8125rem !default;
+$spacing-14: .875rem !default;
+$spacing-15: .9375rem !default;
+$spacing-16: 1rem !default;
+$spacing-17: 1.0625rem !default;
+$spacing-18: 1.125rem !default;
+$spacing-19: 1.1875rem !default;
+$spacing-20: 1.25rem !default;
+$spacing-22: 1.375rem !default;
+$spacing-24: 1.5rem !default;
+$spacing-26: 1.625rem !default;
+$spacing-28: 1.75rem !default;
+$spacing-30: 1.875rem !default;
+$spacing-32: 2rem !default;
+$spacing-34: 2.125rem !default;
+$spacing-36: 2.25rem !default;
+$spacing-38: 2.375rem !default;
+$spacing-40: 2.5rem !default;
+$spacing-50: 3.125rem !default;
+$spacing-60: 3.75rem !default;
+$spacing-70: 4.375rem !default;
+$spacing-80: 5rem !default;
+$spacing-90: 5.625rem !default;
+$spacing-100: 6.25rem !default;
+$spacing-64: 4rem !default;
+$spacing-128: 8rem !default;
+$spacing-256: 16rem !default;
+
+
+//**
+//***Line Heights**********
+//**
+$line-height-large: 1.5 !default;
+$line-height-medium: 1.25 !default;
+$line-height-small: 1 !default;
+
+
+//**
+//***Border**********
+//**
+$border-width: 1px !default;
+
+$border-dotted: dotted !default;
+$border-dashed: dashed !default;
+$border-solid: solid !default;
+$border-none: none !default;
+
+$border-radius: .25rem !default;
+$border-radius-small: .2rem !default;
+$border-radius-large: .5rem !default;
+$border-radius-full: $spacing-full !default;
+
+
+//**
+//***Font **********
+//**
+
+
+$font-size-8: .5rem !default;
+$font-size-9: .5625rem !default;
+$font-size-10: .625rem !default;
+$font-size-11: .6875rem !default;
+$font-size-12: .75rem !default;
+$font-size-13: .8125rem !default;
+$font-size-14: .875rem !default;
+$font-size-15: .9375rem !default;
+$font-size-16: 1rem !default;
+$font-size-17: 1.0625rem !default;
+$font-size-18: 1.125rem !default;
+$font-size-19: 1.1875rem !default;
+$font-size-20: 1.25rem !default;
+$font-size-22: 1.375rem !default;
+$font-size-24: 1.5rem !default;
+$font-size-26: 1.625rem !default;
+$font-size-28: 1.75rem !default;
+$font-size-30: 1.875rem !default;
+$font-size-32: 2rem !default;
+$font-size-34: 2.125rem !default;
+$font-size-36: 2.25rem !default;
+$font-size-38: 2.375rem !default;
+$font-size-40: 2.5rem !default;
+$font-size-50: 3.125rem !default;
+$font-size-60: 3.75rem !default;
+$font-size-70: 4.375rem !default;
+$font-size-80: 5rem !default;
+$font-size-90: 5.625rem !default;
+$font-size-100: 6.25rem !default;
+
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+
+$font-weight-base: 400 !default;
+$line-height-base: $line-height-medium !default;
+
+//**
+//***position **********
+//**
+$static: static;
+$relative: relative;
+$absolute: absolute;
+$fixed: fixed;
+
+//**
+//***line-height **********
+//**
+
+$lh-solid: 1;
+$lh-title: 1.25;
+$lh-copy: 1.5;
+
+//**
+//***Overflow**********
+//**
+
+$visible: visible;
+$hidden: hidden;
+$scroll: scroll;
+$of-auto: auto;
+
+
+
+//**
+//***Display**********
+//**
+
+$none: none !default;
+$block: block !default;
+
+$inline: inline !default;
+$inline-block: inline-block !default;
+
+$table: table !default;
+$inline-table: inline-table !default;
+$table-row: table-row !default;
+$table-cell: table-cell !default;
+$table-header-group: table-header-group !default;
+$table-footer-group: table-footer-group !default;
+$table-row-group: table-row-group !default;
+$table-column-group: table-column-group !default;
+$table-column: table-column !default;
+$table-caption: table-caption !default;
+
+$list-item: list-item !default;
+$contents: contents !default;
+$initial: initial !default;
+$inherit: inherit !default;
+
+
+//**
+//***Flex Variables**********
+//**
+
+//***Flex Direction**********
+
+$flex: flex !default;
+$inline-flex: inline-flex !default;
+
+
+$flex-direction-row: row !default;
+$flex-direction-col: column !default;
+$flex-direction-row-reverse : row-reverse !default;
+$flex-direction-col-reverse: column-reverse !default;
+$flex-direction-initial: $initial !default;
+$flex-direction-inherit: $inherit !default;
+
+$wrap: wrap !default;
+$nowrap: nowrap !default;
+
+//***Flex: Alignment**********
+$baseline: baseline !default;
+$center: center !default;
+$left: left !default;
+$right: right !default;
+$end: end !default;
+$flex-end: flex-end !default;
+$start: start !default;
+$flex-start: flex-start !default;
+$stretch: stretch !default;
+$self-end: self-end !default;
+$self-start: self-start !default;
+$normal: normal !default;
+$initial: initial !default;
+$inherit: inherit !default;
+$auto: auto !default;
+$space-around: space-around !default;
+$space-between: space-between !default;
+$space-evenly: space-evenly !default;
+
+//***Flex: align-content**********
+
+$align-content-start: $flex-start !default;
+$align-content-end: $flex-end !default;
+$align-content-center: $center !default;
+$align-content-space-around: $space-around !default;
+$align-content-space-between: $space-between !default;
+$align-content-stretch: $stretch !default;
+$align-content-baseline: $baseline !default;
+
+//***Flex: align-item**********
+
+$align-items-start: $flex-start !default;
+$align-items-end: $flex-end !default;
+$align-items-center: $center !default;
+$align-items-baseline: $baseline !default;
+$align-items-stretch: $stretch !default;
+
+//***Flex: align-self**********
+
+$align-self-start: $flex-start !default;
+$align-self-end: $flex-end !default;
+$align-self-center: $center !default;
+$align-self-stretch: $stretch !default;
+$align-self-baseline: $baseline !default;
+
+//***Flex: justify-comtent**********
+
+$justify-content-start: $flex-start !default;
+$justify-content-end: $flex-end !default;
+$justify-content-center: $center !default;
+$justify-content-space-around: $space-around !default;
+$justify-content-space-between: $space-between !default;
+
+
+
+//zindex
+
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
+$zindex-0: 0 !default;
+$zindex-1: 1 !default;
+$zindex-2: 2 !default;
+$zindex-3: 3 !default;
+$zindex-4: 4 !default;
+$zindex-5: 5 !default;
+$zindex-10: 10 !default;
+$zindex-20: 20 !default;
+$zindex-30: 30 !default;
+$zindex-40: 40 !default;
+$zindex-50: 50 !default;
+$zindex-60: 60 !default;
+$zindex-70: 70 !default;
+$zindex-80: 80 !default;
+$zindex-90: 90 !default;
+$zindex-99: 99 !default;
+$zindex-100: 100 !default;
+$zindex-999: 999 !default;
+$zindex-9999: 9999 !default;
+
+//**
+//***Layout Heights**********
+//**
+$grid-columns: 12;
+$columns: $grid-columns;
+
+
+//**
+//***Buttons/Form*********
+//**
+$btn-height-small: 1.5rem !default;
+$btn-height-default: 2rem !default;
+$btn-height-large: 2.5rem !default;
+
+$btn-padding-y: .375rem !default;
+$btn-padding-x: .75rem !default;
+$btn-line-height: $line-height-base !default;
+
+$btn-focus-width: .2rem !default;
+$btn-focus-color: rgba($brand, .25) !default;
+$btn-focus-box-shadow: 0 0 0 $btn-focus-width $btn-focus-color !default;
+
+$btn-padding-y-small: .25rem !default;
+$btn-padding-x-small: .5rem !default;
+$btn-line-height-small: $line-height-small !default;
+
+$btn-padding-y-large: .5rem !default;
+$btn-padding-x-large: 1rem !default;
+$btn-line-height-large: $line-height-large !default;
+
+$btn-border-width: $border-width !default;
+$btn-font-weight: 400 !default;
+
+$btn-circle-size: 3rem !default;
+$btn-circle-size-small: 2rem !default;
+$btn-circle-size-large: 4rem !default;
+
+$btn-circle-icon-size-small: $font-size-16 !default;
+$btn-circle-icon-size-medium: $font-size-16 !default;
+$btn-circle-icon-size-large: $font-size-32 !default;
+$btn-circle-font-size: .75rem !default;
+
+$btn-box-shadow: inset 0 1px 0 rgba($white, .15),
+0 1px 1px rgba($black, .075) !default;
+$btn-focus-width: $btn-focus-width !default;
+$btn-focus-box-shadow: $btn-focus-box-shadow !default;
+$btn-block-spacing-y: .75rem !default;
+
+$btn-border-radius: $border-radius !default;
+$btn-border-radius-large: $border-radius-large !default;
+$btn-border-radius-small: $border-radius-small !default;
+$btn-disabled-opacity: .65 !default;
+$btn-active-box-shadow: inset 0 3px 5px rgba($black, .125) !default;
+
+$btn-action: $gray-600 !default;
+$btn-link-disabled-color: $gray-600 !default;
+$btn-transition: color .15s ease-in-out,
+background-color .15s ease-in-out,
+border-color .15s ease-in-out,
+box-shadow .15s ease-in-out !default;
+
+
+//**
+//***Forms controls**********
+//**
+$input-height-small: $btn-height-small !default;
+$input-height-default: $btn-height-default !default;
+$input-height-large: $btn-height-large !default;
+
+$input-padding-y: $btn-padding-y !default;
+$input-padding-x: $btn-padding-x !default;
+$input-line-height: $btn-line-height !default;
+
+$input-padding-y-small: $btn-padding-y-small !default;
+$input-padding-x-small: $btn-padding-x-small !default;
+$input-line-height-small: $btn-line-height-small !default;
+
+$input-padding-y-large: $btn-padding-y-large !default;
+$input-padding-x-large: $btn-padding-x-large !default;
+$input-line-height-large: $btn-line-height-large !default;
+
+$input-bg: $white !default;
+$input-disabled-bg: $gray-200 !default;
+
+$input-color: $gray-700 !default;
+$input-border-color: $gray-400 !default;
+
+$input-border-width: $border-width !default;
+$input-mandatory-border-width: 3px !default;
+$input-mandatory-border-color: $red !default;
+$input-mandatory-star-color: $input-mandatory-border-color !default;
+$input-box-shadow: inset 0 1px 1px rgba($black, .075) !default;
+
+$input-border-radius: $border-radius !default;
+$input-border-radius-large: $border-radius-large !default;
+$input-border-radius-small: $border-radius-small !default;
+
+$input-error-border-color: $red !default;
+$input-error-focus-shadow: 0 0 0 $btn-focus-width rgba($red, .25) !default;
+$input-error-focus-border-color: lighten($input-error-border-color, 25%) !default;
+$error-color: $input-error-border-color !default;
+
+$input-focus-bg: $input-bg !default;
+$input-focus-border-color: lighten($brand, 25%) !default;
+$input-focus-color: $input-color !default;
+$input-focus-width: $btn-focus-width !default;
+$input-focus-box-shadow: $btn-focus-box-shadow !default;
+
+$input-placeholder-color: $input-color !default;
+
+$input-transition: border-color .15s ease-in-out,
+box-shadow .15s ease-in-out !default;
+
+
+//**
+//***Checkbox**********
+//**
+$checkbox-color: $secondary !default;
+$checkbox-border-color: $input-border-color !default;
+$checkbox-border-active-color: $brand-active !default;
+$checkbox-active-color: $checkbox-border-active-color !default;
+
+$checkbox-bg-color : $white !default;
+$checkbox-border-radius: $input-border-radius !default;
+
+$checkbox-disabled-bg-color: $input-disabled-bg !default;
+$checkbox-disabled-color: darken($checkbox-disabled-bg-color, 30%) !default;
+
+$checkbox-error-border-color : $input-error-border-color !default;
+$checkbox-mandatory-color: $checkbox-error-border-color !default;
+
+$checkbox-size: 1rem !default;
+
+
+//**
+//***Radio**********
+//**
+$radio-color: $secondary !default;
+$radio-border-color: $input-border-color !default;
+$radio-border-active-color: $brand-active !default;
+$radio-active-color: $checkbox-border-active-color !default;
+
+$radio-bg-color : $white !default;
+$radio-border-radius: $input-border-radius !default;
+
+$radio-disabled-bg-color: $input-disabled-bg !default;
+$radio-disabled-color: darken($checkbox-disabled-bg-color, 30%) !default;
+
+$radio-error-border-color : $input-error-border-color !default;
+$radio-mandatory-color: $checkbox-error-border-color !default;
+
+$radio-size: 1rem !default;
+
+
+//**
+//***Alerts**********
+//**
+$alert-padding-y: .5rem !default;
+$alert-padding-x: 1rem !default;
+$alert-margin-bottom: 1rem !default;
+$alert-border-radius: $border-radius !default;
+$alert-link-font-weight: $font-weight-bold !default;
+$alert-border-width : $border-width !default;
+$alert-icon-size : $font-size-20 !default;
+$alert-close-icon-size: .75rem !default;
+$alert-font-size: $font-size-16 !default;
+
+
+//tooltip variables
+
+$tooltip-bg : #333 !default;
+$tooltip-color: #ffffff !default;
+
+$tooltip-padding-x : .75rem !default;
+$tooltip-padding-y : .75rem !default;
+
+$tooltip-link-color: $tooltip-color !default;
+$tooltip-data-color: $tooltip-color !default;
+$tooltip-transation-time: .3s !default;
+
+$tooltip-caret-bg : $tooltip-bg !default;
+$tooltip-caret-size: 1.25rem !default;
+$tooltip-caret-border-size: ($tooltip-caret-size / 2) !default;
+$tooltip-position: $tooltip-caret-border-size;
+$tooltip-border-radius : .25rem !default;
+
+
+//***----text-transform----//
+
+$ttc: capitalize;
+$ttl: lowercase;
+$ttu: uppercase;
+$ttn: none;
+
+$c-pointer: pointer;

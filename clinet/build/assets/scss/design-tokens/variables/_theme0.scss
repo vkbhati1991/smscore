@@ -1,0 +1,20 @@
+// Brand color==========================================================================
+
+$brand: #0070d2 !default;
+$brand-hover: darken($brand, 15%) !default;
+$brand-active: darken($brand, 20%) !default;
+$brand-disabled: #2d2d2d !default;
+$brand-secondary: #f99420 !default;
+$brand-secondary-hover: darken($brand-secondary, 15%) !default;
+$brand-secondary-active: darken($brand-secondary, 20%) !default;
+
+
+//Text Link Colors=======================================================================
+
+$brand-text-link: $brand !default;
+$brand-text-link-hover: $brand-hover !default;
+$brand-text-link-active: $brand-active !default;
+$brand-text-link-disabled: $brand-disabled !default;
+
+
+@import "./base";

@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-family: $font-family-regular;
+    color: $primary;
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.login-row {
+    display: flex;
+}
+
+.login-img {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    background: #FAFAFA;
+    height: 100vh;
+
+    .login-media {
+        width: 100%;
+    }
+}
+
+.login-form {
+    width: 60%;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+.login-contnet {
+    max-width: 340px;
+    text-align: left;
+}
+
+.login-title {
+    font-family: $font-family-bold;
+    color: #000;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.login-subtitle {
+    color: #888;
+    font-size: 15px;
+    line-height: 23px;
+    padding: 13px 0;
+}
+
+.login-form-row {
+    margin-bottom: 16px;
+    align-items: center;
+
+    .input-group>.form-control {
+        font-size: 14px;
+    }
+}
+
+.forgotpass {
+    margin-left: 12px;
+    font-size: 12px;
+    color: #000;
+    font-family: MnSansBold;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.login-text {
+    font-family: MnSansBold;
+    font-size: 15px;
+    border-bottom: 2px solid #0093ff;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    width: 40px;
+    padding-top: 12px;
+}
+
+.login-logo {
+    font-family: $font-family-bold;
+    font-size: 22px;
+    position: absolute;
+    right: 60px;
+    top: 60px;
+    color: $brand;
+    width: 156px;
+    height: 40px;
+}
+
+.login-logo span {
+    color: $primary;
+}
+
+.login-title span {
+    color: $brand;
+}
+
+.alert.alert--danger.login-alert .alert__text {
+    font-size: 13px;
+}

@@ -1,0 +1,25 @@
+
+
+@mixin rotate($degree) {
+	-moz-transform: rotate($degree);
+	-o-transform: rotate($degree);
+	-ms-transform: rotate($degree);
+	-webkit-transform: rotate($degree);
+	transform: rotate($degree);
+}
+
+@mixin scale($value) {
+	-moz-transform: scale($value);
+	-o-transform: scale($value);
+	-ms-transform: scale($value);
+	-webkit-transform: scale($value);
+	transform: scale($value);
+}
+
+@mixin rotate3d($degree) {
+	-moz-transform: rotate3d($degree);
+	-o-transform: rotate3d($degree);
+	-ms-transform: rotate3d($degree);
+	-webkit-transform: rotate3d($degree);
+	transform: rotate3d($degree);
+}

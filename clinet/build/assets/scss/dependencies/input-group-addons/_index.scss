@@ -1,0 +1,119 @@
+//Common Placeholder
+%input-group-addon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: $input-border-width $border-solid $input-border-color;
+    background-color: $input-bg;
+}
+
+//Function for picker and help
+@mixin picker-icon($size, $fontSize) {
+    height: $size;
+    min-width: $size;
+    font-size: $fontSize;
+}
+
+@mixin input-group-text($size) {
+    height: $size;
+    min-width: $size;
+}
+
+//if need to place addons after the inputbox
+@mixin input-group-addon-size($size, $fontSize) {
+    .picker-icon {
+        @include picker-icon($size, $fontSize);
+    }
+    .input-group-text {
+        @include input-group-text($size: $size);
+    }
+}
+
+@mixin input-group-append($size, $fontSize) {
+    overflow: hidden;
+    display: flex;
+    margin-left: -$input-border-width;
+    @if $enable-rounded {
+        @include border-right-radius($input-border-radius);
+    }
+    @else {
+        border-radius: 0;
+    }
+    .picker-icon {
+        cursor: pointer;
+        @extend %input-group-addon;
+        &+.picker-icon{
+            margin-left: -$input-border-width;
+            &+.picker-icon{
+                margin-left: -$input-border-width;
+            }
+        }
+        &:last-child {
+            @if $enable-rounded {
+                @include border-right-radius($input-border-radius);
+            }
+        }
+    }
+    .input-group-text {
+        padding: 0 $spacing-16;
+        @extend %input-group-addon;
+        background-color: $gray-200;
+        &+.input-group-text{
+            margin-left: -$input-border-width;
+            &+.input-group-text{
+                margin-left: -$input-border-width;
+            }
+        }
+        &:last-child {
+            @if $enable-rounded {
+                @include border-right-radius($input-border-radius);
+            }
+        }
+    }
+}
+
+
+
+//if need to place addons after the inputbox
+@mixin input-group-prepend($size, $fontSize) {
+    overflow: hidden;
+    display: flex;
+    margin-right: -$input-border-width;
+    @if $enable-rounded {
+        @include border-left-radius($input-border-radius);
+    }
+    @else {
+        border-radius: 0;
+    }
+    .picker-icon {
+        cursor: pointer;
+        @extend %input-group-addon;
+        &+.picker-icon{
+            margin-left: -$input-border-width;
+            &+.picker-icon{
+                margin-left: -$input-border-width;
+            }
+        }
+        &:first-child {
+            @if $enable-rounded {
+                @include border-left-radius($input-border-radius);
+            }
+        }
+    }
+    .input-group-text {
+        padding: 0 $spacing-16;
+        @extend %input-group-addon;
+        background-color: $gray-200;
+        &+.input-group-text{
+            margin-left: -$input-border-width;
+            &+.input-group-text{
+                margin-left: -$input-border-width;
+            }
+        }
+        &:first-child {
+            @if $enable-rounded {
+                @include border-left-radius($input-border-radius);
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+
+
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include set-media-width($breakpoint) {
+      $infix: get-key($breakpoint, $grid-breakpoints);
+
+        .flex#{$infix}        {display: $flex;}
+        .inline-flex#{$infix} {display: $inline-flex;} 
+
+        .flex#{$infix}-row            { flex-direction: $flex-direction-row; }
+        .flex#{$infix}-column         { flex-direction: $flex-direction-col; }
+        .flex#{$infix}-row-reverse    { flex-direction: $flex-direction-row-reverse; }
+        .flex#{$infix}-col-reverse    { flex-direction: $flex-direction-col-reverse; }
+        .flex#{$infix}-wrap           { flex-wrap: $wrap; }
+        .flex#{$infix}-nowrap         { flex-wrap: $nowrap; }
+        .flex#{$infix}-none           { flex: none; } 
+
+
+        .items#{$infix}-start     { align-items: $align-items-start; }
+        .items#{$infix}-end       { align-items: $align-items-end; }
+        .items#{$infix}-center    { align-items: $align-items-center; }
+        .items#{$infix}-baseline  { align-items: $align-items-baseline; }
+        .items#{$infix}-stretch   { align-items: $align-items-stretch; }
+
+        .self#{$infix}-start      { align-self: $align-self-start; }
+        .self#{$infix}-end        { align-self: $align-self-end; }
+        .self#{$infix}-center     { align-self: $align-self-center; }
+        .self#{$infix}-baseline   { align-self: $align-self-baseline; }
+        .self#{$infix}-stretch    { align-self: $align-self-stretch; }
+
+        .content#{$infix}-start   { align-content: $align-content-start; }
+        .content#{$infix}-end     { align-content: $align-content-end; }
+        .content#{$infix}-center  { align-content: $align-content-center; }
+        .content#{$infix}-between { align-content: $align-content-space-between; }
+        .content#{$infix}-around  { align-content: $align-content-space-around; }
+        .content#{$infix}-stretch { align-content: $align-content-stretch; }
+
+        .justify#{$infix}-start    { justify-content: $justify-content-start; }
+        .justify#{$infix}-end      { justify-content: $justify-content-end;} 
+        .justify#{$infix}-center   { justify-content: $justify-content-center;}
+        .justify#{$infix}-between  {justify-content:  $justify-content-space-between;}
+        .justify#{$infix}-around   { justify-content: $justify-content-space-around;}
+  
+    }
+  }
+
+.order-last {order: 99999;}
+
+.flex-1 {
+  flex: 1;
+  -ms-flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+  -ms-flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+  -ms-flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+  -ms-flex: 4;
+}
+
+.flex-5 {
+  flex: 5;
+  -ms-flex: 5;
+}
+
+.flex-6 {
+  flex: 6;
+  -ms-flex: 6;
+}
+
+.flex-7 {
+  flex: 7;
+  -ms-flex: 7;
+}
+
+.flex-8 {
+  flex: 8;
+  -ms-flex: 8;
+}
+
+.flex-9 {
+  flex: 9;
+  -ms-flex: 9;
+}
+
+.flex-10 {
+  flex: 10;
+  -ms-flex: 10;
+}
+
+.flex-11 {
+  flex: 11;
+  -ms-flex: 11;
+}
+
+.flex-12 {
+  flex: 12;
+  -ms-flex: 12;
+}

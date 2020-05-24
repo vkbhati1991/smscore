@@ -1,0 +1,50 @@
+//*
+//it use for wrap text in single line followed by `...`(three dots)
+//
+
+.truncate {  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+//*
+//it use for hide text
+//
+
+.t-hide{ 
+    font-size: 0;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.ws-normal { white-space: normal;}
+.nowrap    { white-space: nowrap;}
+.pre       { white-space: pre;}
+.brWord    { word-break:break-word;}
+
+
+.strike        { text-decoration: line-through;}
+.underline     { text-decoration: underline;}
+.no-underline  { text-decoration: none;}
+  
+.ttc    { text-transform: capitalize !important;}
+.ttl    { text-transform: lowercase !important;}
+.ttu    { text-transform: uppercase !important;}
+.ttn    { text-transform: none !important;}
+
+.pointer {cursor: pointer}
+.default {cursor: default !important;}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include set-media-width($breakpoint) {
+      $infix: get-key($breakpoint, $grid-breakpoints);
+      .tl#{$infix}   { text-align: left; }
+      .tr#{$infix}    { text-align: right; }
+      .tc#{$infix}   { text-align: center; }
+      .tj#{$infix}   { text-align: justify; }
+    }
+}

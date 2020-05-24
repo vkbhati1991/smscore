@@ -1,0 +1,5 @@
+@mixin alert-varient($value) {
+    color: darken($value, 30%);
+    border: $alert-border-width solid lighten($value, 15%);
+    background: lighten($value, 40%);
+}

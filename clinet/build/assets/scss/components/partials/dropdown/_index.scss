@@ -1,0 +1,17 @@
+.dropdown {
+    background: #fff;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.34);
+    position: absolute;
+    top: 140%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -20;
+    @include transition(all .3s);
+}
+
+.dropdown.isActive{
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    z-index: 9999;
+}

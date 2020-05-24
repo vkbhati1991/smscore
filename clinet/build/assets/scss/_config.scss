@@ -1,0 +1,33 @@
+////Root Path -  
+
+////pulse object background 
+//// @type String
+  $pulseheaderbg:     '../imgcss/pulsebg.jpg';
+
+////select down arrow desktop device
+//// @type String
+  $down-arrow:        '../imgcss/down-arrow.png' !default;
+  
+//// select arrow for mobile device
+//// @type String
+  $down-arrow-mob:    '../imgcss/down-arrow.png' !default;
+
+  //login backgroundImage for Mobile Device
+  //// @type String
+  $login-background-img: '../imgcss/bg-img3.jpg' !default;
+
+
+/// Load webfonts
+//// @type String
+  $static-font-path : '../../fonts';
+
+  //// @type Boolean
+
+  $load-web-fonts: true !default;
+  $designer-icon-font-family: "icomoon"!default;
+/// Grid Column Support
+///
+/// @type list
+$grid-columns: (1, 2, 3, 4, 5, 6, 7, 8, 12) !default;
+
+$grid-gutter-width:           2rem !default;

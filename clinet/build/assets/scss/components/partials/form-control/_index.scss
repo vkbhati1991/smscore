@@ -1,0 +1,73 @@
+//Form Controls
+%form-control {
+    display: block;
+    width: 100%;
+    padding: 0rem $input-padding-x;
+    color: $input-color;
+    background-color: $input-bg;
+    border: $input-border-width $border-solid $input-border-color;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    @if $enable-rounded {
+        border-radius: $input-border-radius;
+    }
+    @else {
+        border-radius: 0;
+    }
+    @include transition($input-transition); // Customize the `:focus`
+    @include input-focus(); // Placeholder
+    &::placeholder {
+        opacity: 1;
+        color: $input-placeholder-color
+    } //Disabled
+    &:disabled,
+    &[readonly] {
+        opacity: 1;
+        background-color: $input-disabled-bg;
+    }
+}
+
+.form-control {
+    @extend %form-control;
+
+    &--mandatory{
+        border-left: $input-mandatory-border-width $border-solid $input-mandatory-border-color !important;
+    }
+
+    &--error{
+        border-color: $input-error-border-color !important;
+        &:focus{
+            @include input-error-focus();
+        }
+    }
+}
+
+.checkbox__input--star {
+    position: absolute;
+    left: -.5rem;
+    top: -.3125rem;
+    z-index: 12;
+    font-size: $font-size-13;
+    font-weight: 600;
+    color:$input-mandatory-star-color;
+}
+
+.form-control--help {
+    position: relative;
+    padding-top: .325rem;
+    font-size: $font-size-12;
+}
+
+.has-error{
+    color: $error-color;
+}
+
+
+textarea.form-control{
+    padding: $input-padding-y $input-padding-x;
+    height: auto !important;
+    resize:vertical;
+}
+
+

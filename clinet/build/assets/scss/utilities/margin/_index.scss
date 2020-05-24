@@ -1,0 +1,131 @@
+.ma0 { margin: $spacing-0;}  
+.ma1 { margin: $spacing-4;}  
+.ma2 { margin: $spacing-8;}  
+.ma3 { margin: $spacing-16;} 
+.ma4 { margin: $spacing-32;}  
+.ma5 { margin: $spacing-64;}  
+.ma6 { margin: $spacing-128;} 
+.ma7 { margin: $spacing-256;}
+
+.ml0 { margin-left: $spacing-0;}
+.ml1 { margin-left: $spacing-4;}
+.ml2 { margin-left: $spacing-8;}
+.ml3 { margin-left: $spacing-16;}
+.ml4 { margin-left: $spacing-32;}
+.ml5 { margin-left: $spacing-64;}
+.ml6 { margin-left: $spacing-128;}
+.ml7 { margin-left: $spacing-256;}
+  
+.mr0 { margin-right: $spacing-0;}
+.mr1 { margin-right: $spacing-4;}
+.mr2 { margin-right: $spacing-8;}
+.mr3 { margin-right: $spacing-16;}
+.mr4 { margin-right: $spacing-32;}
+.mr5 { margin-right: $spacing-64;}
+.mr6 { margin-right: $spacing-128;}
+.mr7 { margin-right: $spacing-256;}
+  
+.mb0 { margin-bottom: $spacing-0;}
+.mb1 { margin-bottom: $spacing-4;}
+.mb2 { margin-bottom: $spacing-8;}
+.mb3 { margin-bottom: $spacing-16;}
+.mb4 { margin-bottom: $spacing-32;}
+.mb5 { margin-bottom: $spacing-64;} 
+.mb6 { margin-bottom: $spacing-128;}
+.mb7 { margin-bottom: $spacing-256;}
+
+.mb48 { margin-bottom: -3rem;}
+  
+.mt0 { margin-top: $spacing-0;}
+.mt1 { margin-top: $spacing-4;}
+.mt2 { margin-top: $spacing-8;}  
+.mt3 { margin-top: $spacing-16;}
+.mt4 { margin-top: $spacing-32;}
+.mt5 { margin-top: $spacing-64;}
+.mt6 { margin-top: $spacing-128;}
+.mt7 { margin-top: $spacing-256;}
+
+.mt-3 { margin-top: -1rem;}
+  
+.mv0 {
+    margin-top: $spacing-0;
+    margin-bottom: $spacing-0;
+}
+.mv1 {
+    margin-top: $spacing-4;
+    margin-bottom: $spacing-4;
+}
+.mv2 {
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-8;
+}
+.mv3 {
+    margin-top: $spacing-16;
+    margin-bottom: $spacing-16;
+}
+  
+.mv4 {
+    margin-top: $spacing-32;
+    margin-bottom: $spacing-32;
+}
+.mv5 {
+    margin-top: $spacing-64;
+    margin-bottom: $spacing-64;
+}
+.mv6 {
+    margin-top: $spacing-128;
+    margin-bottom: $spacing-128;
+}
+.mv7 {
+    margin-top: $spacing-256;
+    margin-bottom: $spacing-256;
+}
+  
+.mh0 {
+    margin-left: $spacing-0;
+    margin-right: $spacing-0;
+}
+.mh1 {
+    margin-left: $spacing-4;
+    margin-right: $spacing-4;
+}
+.mh2 {
+    margin-left: $spacing-8;
+    margin-right: $spacing-8;
+}
+.mh3 {
+    margin-left: $spacing-16;
+    margin-right: $spacing-16;
+}
+.mh4 {
+    margin-left: $spacing-32;
+    margin-right: $spacing-32;
+}
+.mh5 {
+    margin-left: $spacing-64;
+    margin-right: $spacing-64;
+}
+.mh6 {
+    margin-left: $spacing-128;
+    margin-right: $spacing-128;
+}
+.mh7 {
+    margin-left: $spacing-256;
+    margin-right: $spacing-256;
+}
+
+  
+  
+  
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include set-media-width($breakpoint) {
+      $infix: get-key($breakpoint, $grid-breakpoints);
+        @each $size in $sizes {
+            .ma#{$infix}-#{$size}{margin:        pxToRem($size);}
+            .mh#{$infix}-#{$size}{margin-left:   pxToRem($size); margin-right:   pxToRem($size);}
+            .mv#{$infix}-#{$size}{margin-top:    pxToRem($size); margin-bottom:  pxToRem($size);}
+            .mt#{$infix}-#{$size}{margin-top:    pxToRem($size);}
+            .mb#{$infix}-#{$size}{margin-bottom: pxToRem($size);}
+        }
+    }
+  }

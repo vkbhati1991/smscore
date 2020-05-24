@@ -1,0 +1,13 @@
+
+// Mixin for Placeholder
+@mixin x-placeholder {
+	&::-webkit-input-placeholder {
+		@content
+	}
+	&::-moz-placeholder {
+		@content
+	}
+	&:-ms-input-placeholder {
+		@content
+	}
+}

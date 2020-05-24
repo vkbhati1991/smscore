@@ -1,0 +1,19 @@
+
+@each $size in $sizes {
+    .tp-#{$size} {top: pxToRem($size);}
+    .bt-#{$size} {bottom:pxToRem($size);}
+}
+
+  
+.no-header { margin-top: -3rem !important;}
+.no-footer { padding-bottom: 0 !important;}
+.bottom-00 { bottom: 0 !important;}
+  
+
+  
+
+
+
+  
+  
+  

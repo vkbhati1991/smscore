@@ -1,0 +1,35 @@
+
+.grd-row {
+   @include create-row();
+ }
+
+ @include create-grid-columns();
+
+ .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    
+    > .grd-col,
+    > [class*="grd-col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+ }
+
+
+ %grd-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+ }
+
+
+ .grd-container{
+    @extend %grd-container;
+    max-width: 1202px;
+ }
+
+ .grd-container-fluid{
+    @extend %grd-container;
+    max-width: 100%;
+}

@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-family: $font-family-regular;
+    color: $primary;
+    line-height: 1;
+    background-image: url(../../images/dimension.png), linear-gradient(180deg, #1b5f9e 0%, rgba(0, 147, 255, 0.45702030812324934) 96%);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active,
+a {
+    outline: none;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+
+.quality_icon {
+    margin: 0 auto 24px auto;
+
+    img {
+        width: 60px;
+    }
+}
+
+.bg-pattern {
+    background-image: url("../../images/absurdity.png");
+}
+
+.home-about-image-container {
+    width: 350px;
+    height: 350px;
+    float: right;
+    margin-right: 100px;
+    overflow: hidden;
+    border-radius: 100%;
+    box-shadow: 0 0 0 30px rgba(0, 0, 0, 0.03);
+    border: 5px solid #6610f2;
+    background: #6610f2;
+}
+
+.home-about-content {
+    border: 3px dashed #6610f2;
+    padding: 24px;
+    border-radius: 40px;
+    color: #000104;
+    line-height: 30px;
+}
+
+figure.employe {
+    margin: 0;
+    display: flex;
+    z-index: 10;
+    position: relative;
+
+    >a {
+        display: inline-block;
+
+        img {
+            min-width: 135px;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+    }
+
+    figcaption {
+        color: #fff;
+    }
+}
+
+.employe-card {
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 80%;
+        border-radius: 15px;
+        background: #5255c5;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+
+    &:hover:after {
+        height: 100%;
+    }
+}
+
+.team-list {
+    >li:nth-child(1) {
+        .employe-card:after {
+            background: #ff5157;
+        }
+    }
+
+    >li:nth-child(2) {
+        .employe-card:after {
+            background: #5255c5;
+        }
+    }
+
+    >li:nth-child(3) {
+        .employe-card:after {
+            background: #5dba3b;
+        }
+    }
+
+    >li:nth-child(4) {
+        .employe-card:after {
+            background: #ff8b00;
+        }
+    }
+
+    >li:nth-child(5) {
+        .employe-card:after {
+            background: #2196f3;
+        }
+    }
+
+    >li:nth-child(6) {
+        .employe-card:after {
+            background: #795548;
+        }
+    }
+}
+
+.app-container {
+    padding: 12px;
+
+    .app-container-box {
+        background: #f3f2f2;
+        border-radius: 5px;
+        min-height: 80vh;
+    }
+
+    .app-container-box--bg-white {
+        background-color: #fff;
+    }
+}
+
+.image-panel {
+    width: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 250px;
+
+
+}
+
+.profile-image {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center top !important;
+}
+
+.imageViewer {
+    display: inline-block;
+    border: 1px solid #ddd;
+    line-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+
+    .docImage {
+        height: 100px;
+    }
+}
+
+.user-image {
+    width: 100px;
+    overflow: hidden;
+    border-radius: 4px;
+    height: 100px;
+}
+
+.user-image.user-image-small {
+    height: 60px;
+    width: 60px;
+}
+
+a.tooltip-link {
+    border-bottom: 1px dotted $brand;
+    color: $brand;
+}
+
+.documentIcon {
+    padding: 8px 16px;
+    position: relative;
+}
+
+.documentContent {
+    flex: 1;
+    padding-right: 16px;
+    padding-top: 10px;
+}
+
+.student-info-scroll {
+    min-height: 496px;
+}
+
+.doc-info-scroll {
+    min-height: 544px;
+}
+
+.address-info-scroll,
+.other-info-scroll {
+    min-height: 250px;
+}

@@ -1,0 +1,49 @@
+.mn-table {
+    width: 100%;
+    overflow: auto;
+}
+
+table,
+.table {
+    width: 100%;
+
+    tr {
+        th {
+            background: #fafaf9;
+            font-family: $font-family-bold;
+            white-space: nowrap;
+        }
+
+        td,
+        th {
+            border-top: 1px solid #dddbda;
+            font-weight: normal;
+            font-size: 13px;
+            color: #514f4d;
+            padding: 5px 12px;
+            text-align: left;
+            white-space: nowrap;
+
+        }
+
+        td {
+            background: #fff;
+        }
+    }
+}
+
+.single-page-view {
+    height: calc(100vh - 218px);
+}
+
+.filterOpen~.single-page-view {
+    height: calc(100vh - 285px);
+}
+
+.table-link {
+    color: $brand;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

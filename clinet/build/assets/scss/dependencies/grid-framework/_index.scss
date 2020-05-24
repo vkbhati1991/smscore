@@ -1,0 +1,69 @@
+  
+@mixin create-column($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+
+@mixin make-col-left-offset($size, $columns: $grid-columns) {
+  $num: $size / $columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin create-row() {
+  display: $flex;
+  flex-wrap: $wrap;
+}
+
+  @mixin create-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints){
+   
+    %grid-coloumn {
+      position: relative;
+      width: 100%;
+      min-height: 1px; // Prevent columns from collapsing when empty
+    }
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      $infix: get-key($breakpoint, $grid-breakpoints);
+
+      @for $i from 1 through $columns{
+        .grd-col#{$infix}-#{$i}{
+          @extend %grid-coloumn;
+        }
+      }
+      .grd-col#{$infix},
+      .grd-col#{$infix}-auto {
+        @extend %grid-coloumn;
+      }
+
+      @include set-media-width($breakpoint) {
+        .grd-col#{$infix} {
+          flex-basis: 0;
+          flex-grow: 1;
+          max-width: 100%;
+        }
+        .grd-col#{$infix}-auto {
+          flex: 0 0 auto;
+          width: auto;
+          max-width: none; // Reset earlier grid tiers
+        }
+        @for $i from 1 through $columns{
+          .grd-col#{$infix}-#{$i}{
+            @include create-column($i);
+          }
+          .order#{$infix}-#{$i} { order: $i; }
+        }
+        .order#{$infix}-first { order: -1; }
+        .order#{$infix}-last { order: $columns + 1; }
+
+        @for $i from 0 through ($columns - 1) {
+          @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+            .grd-col-mg-left#{$infix}-#{$i} {
+              @include make-col-left-offset($i);
+            }
+          }
+        }
+      }
+    }
+    
+  }

@@ -1,0 +1,11 @@
+// Mixin for appearance
+//  .selector {
+//     @include x-appearance(none);
+//   }
+@mixin x-appearance ($value...) {
+	-webkit-appearance: $value;
+	-moz-appearance: $value;
+	-ms-appearance: $value;
+	-o-appearance: $value;
+	appearance: $value;
+}

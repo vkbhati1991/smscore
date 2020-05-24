@@ -1,0 +1,15 @@
+@each $size in $sizes {
+    .wt-#{$size} {width: #{$size}rem;}
+    .min-wt-#{$size} {min-width: #{$size}rem;}
+    .max-wt-#{$size} {max-width: #{$size}rem;}
+
+    .wt#{$size} {width: pxToRem($size);}
+    .min-wt#{$size} {min-width: pxToRem($size);}
+    .max-wt#{$size} {max-width: pxToRem($size);}
+}
+
+@each $width in $widths {
+    .wt--#{$width} {width: percentage($width/100);}
+    .min--wt-#{$width} {min-width: percentage($width/100);}
+    .max--wt-#{$width} {max-width: percentage($width/100);}
+}

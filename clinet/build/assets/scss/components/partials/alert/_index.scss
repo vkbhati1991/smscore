@@ -1,0 +1,40 @@
+.alert {
+    position: relative;
+    padding: $alert-padding-y $alert-padding-x;
+    display: flex;
+    align-items: center;
+
+    @if($enable-rounded) {
+        @include border-radius($alert-border-radius);
+    } @else {
+        border-radius: 0;
+    }
+
+    &__media{
+        font-size: $alert-icon-size;
+        margin-right: .75rem;
+    }
+
+    &__text{
+        font-size: $alert-font-size;
+        flex: 1;
+        flex: 100%;
+    }
+
+    &__link{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    &__close{
+        font-size: $alert-close-icon-size;
+        margin-left: .75rem;
+        cursor: pointer;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .alert--#{$color}{
+        @include alert-varient($value);
+    }
+}

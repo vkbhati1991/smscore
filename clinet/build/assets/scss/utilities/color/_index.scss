@@ -1,0 +1,31 @@
+
+//*
+//*The Method used for create Text color
+//*@example
+// .white {color: #000000}
+//
+@each $color,  $value in $colorCollection {
+    .#{$color} {
+      color: $value;
+    }
+    a.#{$color} {
+      @include hover-focus {
+        color: darken($value, 15%);
+      }
+    }
+  }
+  
+  
+  //*
+  //*The Method used for create background color
+  //*@example
+  // .bg-white {background-color: #ffffff}
+  //
+  
+  @each $color,  $value in $colorCollection {
+    .bg-#{$color} {
+      background-color: $value;
+    }
+  }
+
+

@@ -1,0 +1,14 @@
+
+
+// Mixin for calc 
+//  .selector {
+//    @include x-calc(width, "600px - 2em");
+//  }
+//
+@mixin x-calc ($property, $expression) {
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: -moz-calc(#{$expression});
+	#{$property}: -ms-calc(#{$expression});
+	#{$property}: -o-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+}

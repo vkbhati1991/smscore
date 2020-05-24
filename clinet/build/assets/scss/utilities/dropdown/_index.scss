@@ -1,0 +1,16 @@
+.drop-down {
+    background-color: $white;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.34);
+    position: $absolute;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    top: 140%;
+}
+
+.drop-down.isActive {
+    opacity: 1;
+    visibility: visible;
+    @include transition(all .3s ease-in-out);
+    top: 100%;
+}

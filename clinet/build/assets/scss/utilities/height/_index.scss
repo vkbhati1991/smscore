@@ -1,0 +1,21 @@
+@each $size in $sizes {
+    .ht-#{$size} {height: #{$size}rem;}
+    .min-ht-#{$size} {min-height: #{$size}rem;}
+    .max-ht-#{$size} {max-height: #{$size}rem;}
+
+    .ht#{$size} {height: pxToRem($size);}
+    .min-ht#{$size} {min-height: pxToRem($size);}
+    .max-ht#{$size} {max-height: pxToRem($size);}
+
+}
+.ht--100{height: 100%;}
+.vh-ht-100{ height: 100vh;}
+.vh-ht-90{ height: 90vh;}
+.vh-ht-80{ height: 80vh;}
+.vh-ht-70{ height: 70vh;}
+.vh-ht-60{ height: 60vh;}
+.vh-ht-50{ height: 50vh;}
+.vh-ht-40{ height: 40vh;}
+.vh-ht-30{ height: 30vh;}
+.vh-ht-20{ height: 20vh;}
+.vh-ht-10{ height: 100vh;}
